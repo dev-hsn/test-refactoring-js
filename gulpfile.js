@@ -32,12 +32,10 @@ gulp.task('clean', function () {
 gulp.task('server', function() {
     nodemon({
         script: 'dist/app.js',
-        watch: ["app.js", "routes/*", 'lib/*', 'middleware/*', 'config/*'],
-        ext: 'js json',
+        watch: ['app.js', 'public/styles/*', 'views/*', 'routes/*', 'lib/*', 'middleware/*', 'config/*'],
+        ext: 'js json css twig',
         tasks: ['build']
-    }).on('restart', function() {
-        gulp.src('app.js').pipe(notify('Server successfully restarted'));
-    })
+    });
 });
 
 gulp.task('default', ['build', 'server']);
