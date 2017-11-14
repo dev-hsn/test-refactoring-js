@@ -7,8 +7,13 @@ var clean = require('gulp-clean');
 gulp.task('es6', () => {
     return gulp.src(["app.js", "routes/*", 'lib/*', 'middleware/*'], {base: "."})
         .pipe(babel({presets: ['es2015']}))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist'));
 });
+
+gulp.task('public', () => {
+    return gulp.src(["public/**/*"])
+        .pipe(gulp.dest('dist/public'));
+})
 
 var notify = require('gulp-notify');
 var clean = require('gulp-clean');
@@ -36,5 +41,5 @@ gulp.task('server', function() {
 });
 
 gulp.task('default', ['build', 'server']);
-gulp.task('build', ['es6', 'json']);
+gulp.task('build', ['es6', 'json', 'public']);
 gulp.task('heroku', ['clean', 'build']);
