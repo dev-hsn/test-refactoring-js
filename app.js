@@ -1,15 +1,15 @@
 "use strict";
-var express = require('express');
-var path = require('path');
+import express from 'express';
+import path from 'path';
 import logger       from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser   from 'body-parser';
 import http         from 'http'
 
-import routeProducts       from './routes/products';
-import routeIndex       from './routes/index';
+import routeProducts       from './app/routes/products';
+import routeIndex       from './app/routes/index';
 
-var app = express();
+const app = express();
 const server = http.createServer(app);
 let port = process.env.PORT || 3001;
 
@@ -19,8 +19,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.set("view engine","twig");
 app.use(express.static('views'));
+app.set('views', __dirname + '/app/views');
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', routeIndex);
 app.use('/products', routeProducts);

@@ -1,4 +1,4 @@
-exports.product_list = (req, res) => {
+export const product_list = (req, res) => {
   const sqlite3 = require('sqlite3').verbose();
   const db = new sqlite3.Database('database.sqlite');
 
@@ -9,7 +9,7 @@ exports.product_list = (req, res) => {
   db.close();
 }
 
-exports.product = (req, res) => {
+export const product = (req, res) => {
   const sqlite3 = require('sqlite3').verbose();
   const db = new sqlite3.Database('database.sqlite');
   const id = req.params.id;
@@ -22,7 +22,7 @@ exports.product = (req, res) => {
   db.close();
 }
 
-exports.product_checkout = (req, res) => {
+export const product_checkout = (req, res) => {
   const sqlite3 = require('sqlite3').verbose();
   const db = new sqlite3.Database('database.sqlite');
   const id = req.params.id;

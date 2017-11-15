@@ -1,11 +1,11 @@
 import express from 'express';
+import { isAuth } from '../middleware/middleware';
 
-import { isAuth } from '../../middleware/middleware';
 import { 
     product_list, 
     product, 
     product_checkout 
-} from '../../controllers/productController';
+} from '../controllers/productController';
 
 const router =  express.Router();
 
