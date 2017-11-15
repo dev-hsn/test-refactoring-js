@@ -1,5 +1,6 @@
 "use strict";
 var express = require('express');
+var path = require('path');
 import logger       from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser   from 'body-parser';
@@ -12,9 +13,6 @@ var app = express();
 const server = http.createServer(app);
 let port = process.env.PORT || 3001;
 
-// For using static assets
-app.use(express.static(__dirname + '/public'));
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,18 +20,10 @@ app.use(cookieParser());
 app.set("view engine","twig");
 app.use(express.static('views'));
 
-// app.get('/', routeIndex);
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', routeIndex);
 app.use('/products', routeProducts);
-app.get('/products/list', function(req, res) {
-    var sqlite3 = require('sqlite3').verbose();
-    var db = new sqlite3.Database('database.sqlite');
-
-    db.all("SELECT * FROM products", function(err, rows) {
-        res.render('list', {products: rows});
-    });
-
-    db.close();
-})
 
 app.close = function() {
     server.close();

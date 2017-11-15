@@ -1,33 +1,16 @@
-var express = require('express');
-import { isAuth } from '../lib/middleware'
+import express from 'express';
+
+import { isAuth } from '../../middleware/middleware';
+import { 
+    product_list, 
+    product, 
+    product_checkout 
+} from '../../controllers/productController';
 
 const router =  express.Router();
 
-router.get('/view/:id', isAuth, function(req, res) {
-    var id = req.params.id;
-    var sqlite3 = require('sqlite3').verbose();
-    let db = new sqlite3.Database('database.sqlite');
-
-    db.get("SELECT * FROM products WHERE id = " + id, function(err, row) {
-        console.log(row);
-        res.render('view', {product: row});
-    });
-
-    db.close();
-});
-
-router.get('/cart/:id', isAuth, function(req, res) {
-    var id = req.params.id;
-    var sqlite3 = require('sqlite3').verbose();
-    var db = new sqlite3.Database('database.sqlite');
-
-    db.get("SELECT * FROM products WHERE id = " + id, function(err, row) {
-        console.log(row);
-        res.json({success:true, text: "Product " + id + " successfully bought"})
-    });
-
-    db.close();
-});
-
+router.get('/list', isAuth, product_list);
+router.get('/view/:id', isAuth, product);
+router.get('/cart/:id', isAuth, product_checkout);
 
 export default router;

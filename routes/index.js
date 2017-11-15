@@ -1,5 +1,9 @@
-'use strict';
+import express from 'express';
 
-export function routeIndex(req, res){
-    res.render('test CHANEL');
-}
+const router =  express.Router();
+
+router.get('/', function(req, res) {
+    res.redirect('/products/list');
+});
+
+export default router;

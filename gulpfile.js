@@ -32,7 +32,7 @@ gulp.task('clean', function () {
 gulp.task('server', function() {
     nodemon({
         script: 'dist/app.js',
-        watch: ['app.js', 'public/styles/*', 'views/*', 'routes/*', 'lib/*', 'middleware/*', 'config/*'],
+        watch: ['app.js', 'public/styles/*', 'views/*', 'controllers/*', 'config/*', 'routes/*', 'lib/*', 'middleware/*', 'config/*'],
         ext: 'js json css twig',
         tasks: ['build']
     });
