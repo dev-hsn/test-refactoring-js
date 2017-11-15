@@ -5,9 +5,9 @@ gulp.task('copyViews', () => {
       .pipe(gulp.dest('dist/app/views'));
 })
 
-gulp.task('copyPublic', () => {
-  return gulp.src(["app/public/**/*"])
-      .pipe(gulp.dest('dist/app/public'));
+gulp.task('copyImages', () => {
+  return gulp.src(["app/public/images/*"])
+      .pipe(gulp.dest('dist/app/public/images'));
 });
 
 gulp.task('copyJson', () => {
