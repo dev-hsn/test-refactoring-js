@@ -1,17 +1,17 @@
 "use strict";
-import express from 'express';
-import path from 'path';
-import logger       from 'morgan';
-import cookieParser from 'cookie-parser';
-import bodyParser   from 'body-parser';
-import http         from 'http'
+import express              from 'express';
+import path                 from 'path';
+import logger               from 'morgan';
+import cookieParser         from 'cookie-parser';
+import bodyParser           from 'body-parser';
+import http                 from 'http'
 
-import routeProducts       from './app/routes/products';
-import routeIndex       from './app/routes/index';
+import routeProducts        from './app/routes/products';
+import routeIndex           from './app/routes/index';
 
-const app = express();
-const server = http.createServer(app);
-let port = process.env.PORT || 3001;
+const app                   = express();
+const server                = http.createServer(app);
+let port                    = process.env.PORT || 3001;
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.set("view engine","twig");
 app.use(express.static('views'));
 app.set('views', __dirname + '/app/views');
-
+//For static files
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', routeIndex);

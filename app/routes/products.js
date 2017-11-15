@@ -1,5 +1,5 @@
-import express from 'express';
-import { isAuth } from '../middleware/middleware';
+import express          from 'express';
+import { isAuth }       from '../middleware/middleware';
 
 import { 
     product_list, 

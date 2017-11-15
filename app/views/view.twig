@@ -1,9 +1,8 @@
 <head>
     <meta charset="utf-8">    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">    
-    <title>CHANEL</title>
-    <meta name="description" content="View page => Mode, Parfums-Beauté, Horlogerie, Joaillerie : retrouvez les nouvelles créations
-    Mode · Joaillerie · Beauté · Horlogerie">
+    <title>CHANEL - {{ product.name }}</title>
+    <meta name="description" content="{{ product.description }}">
     <!-- reponsive meta -->
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"/>
@@ -26,16 +25,16 @@
             <div class="col-4">
                 <figure>
                     <img class="product__card-img-top" src="/images/{{ product.image }}" />
-                    <figcaption class="product__name">{{ product.name }}</figcaption>
+                    <figcaption class="product__name indent">{{ product.name }}</figcaption>
                 </figure>
-            </div>
+            </div><!-- /.col-4 -->
             <div class="col-8">
                 <p class="product__description">{{ product.description }}</p>
                 <p class="product__stock">Stock level: {{ product.stock }}</p>
                 <a class="btn btn-primary btn--primary" href="/products/cart/{{ product.id }}">Buy</a>
-            </div>
-        </div>
-    </section>
+            </div><!-- /.col-8 -->
+        </div><!-- /.row -->
+    </section><!-- /.product -->
     <footer class="footer text-center" role="footer">
         <a href="http://www.chanel.com" class="footer__logo"></a>
     </footer>
