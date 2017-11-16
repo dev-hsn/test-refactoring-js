@@ -20,6 +20,14 @@ In the last step I wrapped every application's files in the app folder so it can
 
 And finally I structured the gulp files in a folder to make it clear to understand.
 
+For the HTML CSS part, I organized the files with the 7-in-1 sass pattern, and I minified the generatd file "main.css"
+
+The pages are now responsive with mobile-first.
+
+# Note
+
+In the last part of the project html/css the solutions are unlimited and I can do better, it really depends on your needs
+
 We can add more futures for this project, it depends on your need.
 
 So thanks again for your review, I hope you like it :)
