@@ -1,0 +1,19 @@
+.btn {
+  border-width: 1px;
+  background: transparent;
+
+  &--primary {
+    @include transition-primary;
+    border-color: $primary;
+    color: $primary;
+  
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
+  }
+
+  &--lg {
+    padding: 8px 50px;
+  }
+}

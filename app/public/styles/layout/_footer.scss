@@ -1,0 +1,15 @@
+.footer {
+  padding: 30px 0;
+  background: #E3E3E3;
+
+  &__logo {
+    text-align: center;
+    margin: 0 auto;
+    text-indent: -9999px;
+    display: block;
+    height:50px;
+    width:300px;
+    background: url("http://www.chanel.com/img/logo_chanel.svg") no-repeat top left;
+    background-size: 100%;
+  }
+}

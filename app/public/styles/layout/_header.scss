@@ -1,0 +1,21 @@
+.header {
+  padding: 70px 0;
+
+  &__title {
+    color: $primary;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 12px;
+
+    @include font-size (20px);
+
+    @include breakpoint($md) {
+      @include font-size (40px);
+    }
+
+    &:hover {
+      color: $primary;
+      opacity: 0.9;
+    }
+  }
+}

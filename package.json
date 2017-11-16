@@ -21,6 +21,7 @@
     "jade": "^1.11.0",
     "morgan": "~1.6.1",
     "mysql": "^2.14.1",
+    "normalize.css": "^7.0.0",
     "orm": "^3.2.4",
     "request": "^2.81.0",
     "rimraf": "^2.6.1",
@@ -39,8 +40,12 @@
     "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
+    "gulp-cssnano": "^2.1.2",
     "gulp-nodemon": "^2.2.1",
     "gulp-notify": "^3.0.0",
-    "gulp-sass": "^3.1.0"
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "postcss": "^6.0.14",
+    "postcss-import": "^11.0.0"
   }
 }

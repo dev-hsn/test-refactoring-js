@@ -1,0 +1,19 @@
+.product {
+  &__name {
+    text-transform: uppercase;
+    letter-spacing: 12px;
+  }
+
+  &__description {
+    @include font-size(19px);
+    line-height: 34px;
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__stock {
+    color: #aaa;
+  }
+}

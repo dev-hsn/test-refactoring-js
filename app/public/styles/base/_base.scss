@@ -1,0 +1,22 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: none;
+    color: $congress-blue;
+  }
+}
+.indent {
+  text-indent: -9999px;
+}
+.padder  {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+ul  {
+  list-style: none;
+}
